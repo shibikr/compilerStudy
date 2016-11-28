@@ -1,3 +1,5 @@
+var Tree = require('../lib/Tree.js');
+
 var operatorInWords = {
   '+' : 'plus',
   '-' : 'minus',
@@ -14,7 +16,9 @@ OperatorNode.prototype = {
     return operatorInWords[this.value];
   },
   evaluateExp : function(leftChild,rightChild){
-    return eval(leftChild.evaluate()+this.value+rightChild.evaluate());
+    var left = (leftChild instanceof Tree)? leftChild.evaluateExp() : leftChild.evaluate();
+    var right = (rightChild instanceof Tree)? rightChild.evaluateExp() : rightChild.evaluate();
+    return eval(left+this.value+right);
   }
 };
 

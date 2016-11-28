@@ -4,8 +4,8 @@ var expect = require('chai').expect;
 
 describe('Parse tree', function() {
   it('should throw an error when variable is not assigned', function() {
-    var parse = function(){parseData('x+10;x=10;');}
-    expect(parse).to.throws(Error,'x is not defined');
+    var expected = function(){parseData('x+10;x=10;');}
+    expect(expected).to.throws(Error,'x is not defined');
   });
 
   it('should evaluate the tree of the given expression x=10;5*x+2;', function() {
@@ -25,7 +25,7 @@ describe('Parse tree', function() {
 
   it('should evaluate the tree of the given expression of multiple assignments with brackets', function() {
     var result = parseData('x=10;y=20;z=30;x^2+y^2-z^2;');
-    assert.equal(result, 2);
+    assert.equal(result, -400);
   });
 
   it('should evaluate the tree with expression assigns to variable ', function() {
@@ -33,9 +33,14 @@ describe('Parse tree', function() {
     assert.equal(result, 35);
   });
 
-  it('should return the value of given expression ', function() {
+  it('should return the value of given variable ', function() {
     var result = parseData('x=2;x=2^5;x;');
     assert.equal(result, 32);
+  });
+
+  it('should evaluate expressions containing parenthesis ', function() {
+    var result = parseData('x=10;y=20;z=30;(x^2)+(y^2)-(z^2);');
+    assert.equal(result, -400);
   });
 
 });

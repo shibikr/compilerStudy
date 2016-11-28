@@ -32,8 +32,8 @@
 %left '='
 %left '+' '-'
 %left '*' '/'
-%right '^'
-%right '!'
+%left '^'
+%left '!'
 
 %start expressions
 
@@ -47,8 +47,6 @@ expressions
 statements
     : statement ';'
         {$$ = [$1];}
-    // | variable ';'
-    //     {$$ = }
     | statements statement ';'
         {$$ = $1.concat($2);}
     ;
@@ -71,7 +69,14 @@ operation
         {$$ = new Tree($1,new ExponentNode($2),$3)}
     | operation '!' operation
         {$$ = new Tree($1,new OperatorNode($2),$3)}
-    | operand
+    | operation-with-parenthesis
+    | variable
+    | number
+    ;
+
+operation-with-parenthesis
+    : '(' operation ')'
+      {$$ = $2;}
     ;
 
 assignment

@@ -1,10 +1,14 @@
+var Tree = require('../lib/Tree.js');
+
 var ExponentNode = function(operator){
-  this.value = operator
+  this.value = operator;
 };
 
 ExponentNode.prototype = {
   evaluateExp : function(leftChild,rightChild){
-    return Math.pow(leftChild.evaluate(),rightChild.evaluate());
+    var left = (leftChild instanceof Tree) ? leftChild.evaluateExp() : leftChild.evaluate();
+    var right = (rightChild instanceof Tree) ? rightChild.evaluateExp() : rightChild.evaluate();
+    return Math.pow(left,right);
   }
 };
 

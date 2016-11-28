@@ -8,7 +8,7 @@ var VariableNode = function(variable){
 VariableNode.prototype = {
   assignments : {},
   addValue : function(content){
-    return this.assignments[this.value] = content.evaluate();
+    return this.assignments[this.value] = content;
   },
   evaluate : function(){
     var result = this.assignments[this.value];

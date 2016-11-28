@@ -3,7 +3,6 @@ var ParseTree = function(parseTree){
 };
 
 ParseTree.prototype = {
-  assignments : {},
   addTree : function(tree){
     this.parseTree.push(tree)
     return this.parseTree;
