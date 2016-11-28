@@ -12,6 +12,9 @@ var OperatorNode = function(operator){
 OperatorNode.prototype = {
   representInWords : function(){
     return operatorInWords[this.value];
+  },
+  evaluateExp : function(leftChild,rightChild){
+    return eval(leftChild.evaluate()+this.value+rightChild.evaluate());
   }
 };
 

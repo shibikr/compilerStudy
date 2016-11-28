@@ -1,4 +1,3 @@
-
 var Tree = function(leftChild,root,rightChild) {
   this.root = root;
   this.leftChild = leftChild;
@@ -11,6 +10,9 @@ Tree.prototype = {
   },
   representInWords : function(){
     return ['('+this.leftChild.representInWords()+' '+this.root.representInWords()+' '+this.rightChild.representInWords()+')'].join('');
+  },
+  evaluateExp : function(){
+    return this.root.evaluateExp(this.leftChild,this.rightChild);
   }
 };
 
