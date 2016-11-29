@@ -13,6 +13,9 @@ Tree.prototype = {
   },
   evaluateExp : function(){
     return this.root.evaluateExp(this.leftChild,this.rightChild);
+  },
+  convertToJs : function(){
+    return this.root.convertToJs(this.leftChild,this.rightChild);
   }
 };
 

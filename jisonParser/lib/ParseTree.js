@@ -1,3 +1,5 @@
+var Tree = require('./AssignmentNode.js');
+
 var ParseTree = function(parseTree){
   this.parseTree = parseTree;
 };
@@ -21,6 +23,13 @@ ParseTree.prototype = {
     return this.parseTree.map(function(tree){
       return tree.representInWords();
     }).pop();
+  },
+  convertToJs : function(){
+    return this.parseTree.map(function(tree){
+      if(tree.root instanceof Tree)
+        return 'var '+tree.convertToJs();
+      return 'console.log('+tree.convertToJs()+');';
+    }).join('\n');
   }
 };
 

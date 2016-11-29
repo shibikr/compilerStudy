@@ -1,8 +1,8 @@
 var assert = require('assert');
-var parseData = require('../source/assignment3.js');
+var parseData = require('../source/expressionEvaluator.js');
 var expect = require('chai').expect;
 
-describe('Parse tree', function() {
+describe('Evaluate Expression', function() {
   it('should throw an error when variable is not assigned', function() {
     var expected = function(){parseData('x+10;x=10;');}
     expect(expected).to.throws(Error,'x is not defined');
