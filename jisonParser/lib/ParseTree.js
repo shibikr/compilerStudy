@@ -28,7 +28,7 @@ ParseTree.prototype = {
     return this.parseTree.map(function(tree){
       if(tree.root instanceof Tree)
         return 'var '+tree.convertToJs();
-      return 'console.log('+tree.convertToJs()+');';
+      return 'console.log'+tree.evaluate()+';';
     }).join('\n');
   }
 };

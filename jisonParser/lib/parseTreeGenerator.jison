@@ -1,12 +1,13 @@
 /* lexical grammar */
 %{
-  var Tree = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/Tree.js');
-  var NumberNode = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/NumberNode.js');
-  var OperatorNode = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/OperatorNode.js');
-  var VariableNode = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/VariableNode.js');
-  var ParseTree = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/ParseTree.js');
-  var AssignmentNode = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/AssignmentNode.js');
-  var ExponentNode = require('/Users/shibi/stepOct-Nov/compilerStudy/jisonParser/lib/ExponentNode.js');
+  var path = require('path');
+  var Tree = require(path.resolve('../lib/Tree.js'));
+  var NumberNode = require(path.resolve('../lib/NumberNode.js'));
+  var OperatorNode = require(path.resolve('../lib/OperatorNode.js'));
+  var VariableNode = require(path.resolve('../lib/VariableNode.js'));
+  var ParseTree = require(path.resolve('../lib/ParseTree.js'));
+  var AssignmentNode = require(path.resolve('../lib/AssignmentNode.js'));
+  var ExponentNode = require(path.resolve('../lib/ExponentNode.js'));
 %}
 
 %lex

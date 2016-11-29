@@ -10,6 +10,9 @@ NumberNode.prototype = {
   },
   representInWords : function(){
     return converter.toWords(this.value);
+  },
+  evaluateExp:function(){
+    return this.evaluate();
   }
 };
 

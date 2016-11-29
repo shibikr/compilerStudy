@@ -9,6 +9,6 @@ describe('convert to js',function(){
 
   it('convert multiple expressions to js',function(){
     var result = parseData('x=5;5+x*2;')
-    assert.equal(result,'var x=5;\nconsole.log(5+x*2);');
+    assert.equal(result,'var x=5;\nconsole.log(5+(10*2));');
   });
 });
