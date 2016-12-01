@@ -1,7 +1,7 @@
-var parser = require('../lib/jisonParser');
+var createParseTree = require('../lib/jisonParser');
 
 var parseData = function(content){
-  var parsedData = parser.parse(content);
+  var parsedData = createParseTree(content);
   return parsedData.addParenthesis();
 };
 

@@ -1,7 +1,7 @@
 var assert = require('assert');
-var parseData = require('../source/assignment1.js');
+var parseData = require('../source/representWithBrackets.js');
 
-describe('parseData',function(){
+describe('represent with brackets',function(){
   it('should return ((1+2)+3) when 1+2+3 passes',function(){
     var data = '1+2+3;';
     var result = parseData(data);

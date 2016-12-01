@@ -6,22 +6,22 @@ var parseData = function(content){
   return parsedData.evaluateExp();
 };
 
-const rl = readline.createInterface({
+const interface = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
   prompt:'> '
 });
 
-rl.prompt();
+interface.prompt();
 
-rl.on('line', (input) => {
+interface.on('line', (input) => {
   console.log(parseData(input));
-  rl.prompt();
+  interface.prompt();
 });
 
 
-rl.on('SIGINT', () => {
-  rl.question('Are you sure you want to exit(y/n)?', (answer) => {
-    if (answer.match(/^y(es)?$/i)) rl.pause();
+interface.on('SIGINT', () => {
+  interface.question('Are you sure you want to exit(y/n)?', (answer) => {
+    if (answer.match(/^y(es)?$/i)) interface.pause();
   });
 });

@@ -46,15 +46,21 @@ expressions
     ;
 
 statements
-    : statement ';'
+    : statement
         {$$ = [$1];}
-    | statements statement ';'
+    | statements statement
         {$$ = $1.concat($2);}
     ;
 
 statement
     : operation
     | assignment
+    | statement-with-semicolon
+    ;
+
+statement-with-semicolon
+    : operation ';'
+    | assignment ';'
     ;
 
 operation

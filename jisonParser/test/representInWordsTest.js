@@ -1,7 +1,7 @@
 var assert = require('assert');
-var parseData = require('../source/assignment2.js');
+var parseData = require('../source/representInWords.js');
 
-describe('parseData',function(){
+describe('representInWords',function(){
   it('should return ((one plus two) plus three) when 1+2+3 passes',function(){
     var data = '1+2+3;';
     var result = parseData(data);
