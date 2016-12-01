@@ -1,13 +1,13 @@
 /* lexical grammar */
 %{
   var path = require('path');
-  var Tree = require(path.resolve('../lib/Tree.js'));
-  var NumberNode = require(path.resolve('../lib/NumberNode.js'));
-  var OperatorNode = require(path.resolve('../lib/OperatorNode.js'));
-  var VariableNode = require(path.resolve('../lib/VariableNode.js'));
-  var ParseTree = require(path.resolve('../lib/ParseTree.js'));
-  var AssignmentNode = require(path.resolve('../lib/AssignmentNode.js'));
-  var ExponentNode = require(path.resolve('../lib/ExponentNode.js'));
+  var Tree = require(path.resolve('./lib/Tree.js'));
+  var NumberNode = require(path.resolve('./lib/NumberNode.js'));
+  var OperatorNode = require(path.resolve('./lib/OperatorNode.js'));
+  var VariableNode = require(path.resolve('./lib/VariableNode.js'));
+  var ParseTree = require(path.resolve('./lib/ParseTree.js'));
+  var AssignmentNode = require(path.resolve('./lib/AssignmentNode.js'));
+  var ExponentNode = require(path.resolve('./lib/ExponentNode.js'));
 %}
 
 %lex

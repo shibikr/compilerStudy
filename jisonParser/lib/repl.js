@@ -1,8 +1,8 @@
-var parser = require('../lib/jisonParser');
+var createParseTree = require('../lib/jisonParser');
 const readline = require('readline');
 
 var parseData = function(content){
-  var parsedData = parser.parse(content);
+  var parsedData = createParseTree(content);
   return parsedData.evaluateExp();
 };
 
